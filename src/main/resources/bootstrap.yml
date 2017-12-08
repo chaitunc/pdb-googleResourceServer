@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: pdb-googleResourceServer
+  cloud:
+    config:
+      uri: https://pdb-configserver.herokuapp.com/
+      fail-fast: true
+      password: ${config_server_secret}
+      username: user
+
+---
+spring:
+  profiles: local
+  cloud:
+    config:
+      uri: http://localhost:8080
